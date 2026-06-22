@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DexLink Social Trading
 
-## Getting Started
+A modern **social trading platform** UI built with Next.js 15, TypeScript, and Tailwind CSS. Showcases copy-trading workflows, trader leaderboards, and performance analytics — part of the [DexLink](https://dexlink.dev) portfolio.
 
-First, run the development server:
+**Live demo:** [dexlink-social-trading.vercel.app](https://dexlink-social-trading.vercel.app)
+
+## Features
+
+- Social trading landing page with trader leaderboard
+- Performance stats dashboard (volume, ROI, latency)
+- Copy-trading & risk-control feature highlights
+- Dark fintech UI with glassmorphism and responsive layout
+- Deployed on Vercel with CI-ready Next.js App Router
+
+## Tech stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| UI | Radix UI, Lucide icons, Framer Motion |
+| Deploy | Vercel |
+
+## Getting started
 
 ```bash
+git clone https://github.com/mtx9666/dexlink-social-trading.git
+cd dexlink-social-trading
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server (Turbopack) |
+| `npm run build` | Production build |
+| `npm run start` | Run production server |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/app/
+  layout.tsx    # Root layout & metadata
+  page.tsx      # Landing page — hero, stats, leaderboard
+  globals.css   # Theme tokens & glass styles
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What this demonstrates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Full-stack frontend architecture with Next.js App Router
+- Component-driven UI design for fintech products
+- Production deployment pipeline (Vercel)
+- Portfolio integration with [dexlink.dev](https://dexlink.dev)
 
-## Deploy on Vercel
+## Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Ali** — [@mtx9666](https://github.com/mtx9666) · [dexlink.dev](https://dexlink.dev)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT

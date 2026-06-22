@@ -1,102 +1,189 @@
-import Image from "next/image";
+import {
+  ArrowUpRight,
+  BarChart3,
+  Copy,
+  Shield,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
+
+const stats = [
+  { label: "Active traders", value: "12,480+", icon: Users },
+  { label: "24h volume", value: "$48.2M", icon: BarChart3 },
+  { label: "Avg. copy ROI", value: "+18.4%", icon: TrendingUp },
+  { label: "Latency", value: "<120ms", icon: Zap },
+];
+
+const leaders = [
+  { rank: 1, name: "AlphaVault", roi: "+142%", win: "78%", followers: "2.1k" },
+  { rank: 2, name: "QuantEdge", roi: "+118%", win: "74%", followers: "1.8k" },
+  { rank: 3, name: "MomentumX", roi: "+96%", win: "71%", followers: "1.4k" },
+  { rank: 4, name: "DeltaFlow", roi: "+88%", win: "69%", followers: "980" },
+];
+
+const features = [
+  {
+    title: "Copy trading",
+    desc: "Mirror top performers with configurable risk limits and allocation caps.",
+    icon: Copy,
+  },
+  {
+    title: "Live analytics",
+    desc: "Sharpe, drawdown, win rate, and exposure dashboards updated in real time.",
+    icon: BarChart3,
+  },
+  {
+    title: "Risk controls",
+    desc: "Stop-loss templates, max position size, and portfolio-level guardrails.",
+    icon: Shield,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="flex items-center gap-2">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-sm font-bold">
+            DL
+          </div>
+          <span className="text-lg font-semibold tracking-tight">DexLink</span>
         </div>
+        <nav className="hidden items-center gap-8 text-sm text-[var(--muted)] md:flex">
+          <a href="#features" className="hover:text-white">
+            Features
+          </a>
+          <a href="#leaderboard" className="hover:text-white">
+            Leaderboard
+          </a>
+          <a
+            href="https://dexlink.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            Portfolio
+          </a>
+        </nav>
+        <a
+          href="https://dexlink-social-trading.vercel.app"
+          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+        >
+          Launch app
+        </a>
+      </header>
+
+      <main className="mx-auto max-w-6xl px-6 pb-20">
+        <section className="py-16 text-center md:py-24">
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-400">
+            Social trading platform
+          </p>
+          <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+            Trade smarter with{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              data-driven copy trading
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--muted)]">
+            DexLink connects retail traders to verified strategies, performance
+            analytics, and transparent leaderboards — built with Next.js,
+            TypeScript, and real-time market data pipelines.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://dexlink-social-trading.vercel.app"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-500"
+            >
+              View live demo
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a
+              href="https://github.com/mtx9666/dexlink-social-trading"
+              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium hover:border-blue-500/40"
+            >
+              Source on GitHub
+            </a>
+          </div>
+        </section>
+
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map(({ label, value, icon: Icon }) => (
+            <div key={label} className="glass rounded-2xl p-5">
+              <Icon className="mb-3 h-5 w-5 text-blue-400" />
+              <p className="text-2xl font-bold">{value}</p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{label}</p>
+            </div>
+          ))}
+        </section>
+
+        <section id="leaderboard" className="mt-16">
+          <h2 className="mb-6 text-2xl font-bold">Top traders this month</h2>
+          <div className="glass overflow-hidden rounded-2xl">
+            <table className="w-full text-left text-sm">
+              <thead className="border-b border-[var(--border)] text-[var(--muted)]">
+                <tr>
+                  <th className="px-5 py-4 font-medium">Rank</th>
+                  <th className="px-5 py-4 font-medium">Trader</th>
+                  <th className="px-5 py-4 font-medium">ROI</th>
+                  <th className="px-5 py-4 font-medium">Win rate</th>
+                  <th className="px-5 py-4 font-medium">Followers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leaders.map((row) => (
+                  <tr
+                    key={row.rank}
+                    className="border-b border-[var(--border)] last:border-0"
+                  >
+                    <td className="px-5 py-4 font-mono text-[var(--muted)]">
+                      #{row.rank}
+                    </td>
+                    <td className="px-5 py-4 font-medium">{row.name}</td>
+                    <td className="px-5 py-4 font-medium text-[var(--success)]">
+                      {row.roi}
+                    </td>
+                    <td className="px-5 py-4">{row.win}</td>
+                    <td className="px-5 py-4">{row.followers}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="features" className="mt-16 grid gap-6 md:grid-cols-3">
+          {features.map(({ title, desc, icon: Icon }) => (
+            <div key={title} className="glass rounded-2xl p-6">
+              <Icon className="mb-4 h-6 w-6 text-blue-400" />
+              <h3 className="text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                {desc}
+              </p>
+            </div>
+          ))}
+        </section>
+
+        <section className="glass mt-16 rounded-2xl p-8 text-center md:p-12">
+          <h2 className="text-2xl font-bold md:text-3xl">
+            Built for performance & transparency
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[var(--muted)]">
+            Next.js 15 · TypeScript · Tailwind CSS · Framer Motion · Radix UI.
+            Part of the DexLink portfolio at{" "}
+            <a
+              href="https://dexlink.dev"
+              className="text-blue-400 hover:underline"
+            >
+              dexlink.dev
+            </a>
+            .
+          </p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t border-[var(--border)] py-8 text-center text-sm text-[var(--muted)]">
+        © {new Date().getFullYear()} DexLink · Ali (@mtx9666)
       </footer>
     </div>
   );
